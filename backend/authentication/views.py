@@ -31,12 +31,12 @@ class LoginView(APIView):
             return Response({"token":token.key},status=status.HTTP_200_OK)
         return Response({"error":"Invalid Credentials"}, status=status.HTTP_401_UNAUTHORIZED)
 
-class HomeView(APIView):
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
+# class HomeView(APIView):
+#     authentication_classes = [TokenAuthentication]
+#     permission_classes = [IsAuthenticated]
 
-    def get(self, request):
-        return Response({"message":"Hello, World!"})
+#     def get(self, request):
+#         return Response({"message":"Hello, World!"})
 
 class LogoutView(APIView):
     permission_classes = [IsAuthenticated]
